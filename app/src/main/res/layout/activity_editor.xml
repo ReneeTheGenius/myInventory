@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/activity_margin"
+    android:onClick="rootViewListener"
+    tools:context=".EditorActivity">
+
+    <LinearLayout
+        android:id="@+id/buyer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:paddingLeft="@dimen/activity_margin">
+
+        <EditText
+            android:id="@+id/name"
+            style="@style/EditorFieldStyle"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_weight="1"
+            android:hint="@string/writeName"
+            android:inputType="textPersonName"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:textColor="#2B3D4D"
+            tools:text="sfsfsdf"/>
+
+        <TextView
+            android:textAppearance="?android:textAppearanceMedium"
+            android:id="@+id/date"
+            style="@style/EditorFieldStyle"
+            android:layout_weight="1"
+            android:hint="@string/pick_date"
+            android:layout_gravity="center"
+            android:onClick="getDate"
+            android:textColor="#2B3D4D"
+            tools:text="sfsfsdf"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="36dp"
+            android:layout_gravity="center"
+            android:layout_height="36dp"
+            app:fabCustomSize="36dp"
+            app:elevation="4dp"
+            android:src="@drawable/ic_add"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buyer"
+        android:layout_marginTop="@dimen/activity_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/cards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+                android:paddingTop="@dimen/activity_margin_bottom"
+                android:id="@+id/total_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cards"
+                android:paddingLeft="@dimen/activity_margin"
+                android:paddingRight="@dimen/activity_margin">
+
+                <!-- Label 总价 -->
+                <TextView
+                    style="@style/CategoryStyle"
+                    android:layout_gravity="bottom"
+                    android:gravity="left"
+                    android:paddingRight="28dp"
+                    android:text="@string/total" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/total"
+                        style="@style/CategoryStyle"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="@dimen/activity_margin"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:onClick="calculateTotal"
+                        android:textColor="#2B3D4D"
+                        tools:text="1825"/>
+
+                    <TextView
+                        style="@style/EditorUnitsStyle"
+                        android:gravity="right"
+                        android:text="@string/money_unit" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bill_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/total_view"
+                android:paddingLeft="@dimen/activity_margin"
+                android:paddingRight="@dimen/activity_margin">
+
+                <!-- Label 总价 -->
+                <TextView
+                    style="@style/CategoryStyle"
+                    android:layout_gravity="bottom"
+                    android:gravity="left"
+                    android:text="@string/bill" />
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/bill"
+                        style="@style/CategoryStyle"
+                        android:onClick="displayBill"
+                        android:layout_gravity="bottom"
+                        android:layout_marginLeft="@dimen/activity_margin"
+                        android:hint="@string/queryBills"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textColor="#2B3D4D" />
+
+                    <TextView
+                        style="@style/EditorUnitsStyle"
+                        android:gravity="right"
+                        android:text="@string/money_unit" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
+

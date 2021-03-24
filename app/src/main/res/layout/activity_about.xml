@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="88dp"
+    android:layout_marginLeft="32dp"
+    android:layout_marginRight="32dp"
+    android:layout_marginBottom="32dp"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="32dp">
+    <TextView
+        style="@style/AboutTitle"
+        android:text="关于作者" />
+
+    <TextView
+        style="@style/AboutItem"
+        android:text="董青青" />
+
+    <TextView
+        style="@style/AboutItem"
+        android:text="2018213688" />
+
+    <TextView
+        style="@style/AboutItem"
+        android:text="2018211805班" />
+</LinearLayout>
+    <TextView
+        style="@style/AboutTitle"
+        android:text="关于程序" />
+
+    <TextView
+        style="@style/AboutItem"
+        android:text="信息系统安全课后作业" />
+    <TextView
+        style="@style/AboutItem"
+        android:text="使用Activity和ContentProvider组件" />
+
+</LinearLayout>

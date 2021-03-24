@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2016 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- Layout for the editor -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/shadow"
+    app:cardCornerRadius="8dp"
+    tools:context=".EditorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:paddingBottom="@dimen/activity_margin_bottom">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/remove_fab"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:paddingTop="@dimen/activity_margin_bottom"
+            android:layout_marginRight="@dimen/activity_margin_bottom"
+            android:src="@drawable/ic_remove"
+            app:fabCustomSize="36dp"
+            app:elevation="4dp"
+            android:onClick="removeCard"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingRight="@dimen/activity_margin_bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/CategoryStyle"
+                    android:text="@string/goods" />
+
+                <EditText
+                    android:id="@+id/goods"
+                    style="@style/EditorFieldStyle"
+                    android:layout_weight="1"
+                    android:inputType="text"
+                    tools:text="100"/>
+
+                <TextView
+                    style="@style/CategoryStyle"
+                    android:text="@string/unit_price" />
+
+                <RelativeLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/unit_price"
+                        style="@style/EditorFieldStyle"
+                        android:layout_alignParentLeft="true"
+                        android:layout_toLeftOf="@id/danwei"
+                        android:inputType="numberDecimal" />
+
+                    <EditText
+                        android:id="@+id/danwei"
+                        style="@style/EditorUnitsStyle"
+                        android:layout_alignBottom="@id/unit_price"
+                        android:layout_alignParentRight="true"
+                        android:hint="填单位"
+                        android:text="元/" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/CategoryStyle"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/amount" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/amount"
+                        style="@style/EditorFieldStyle"
+                        android:layout_weight="1"
+                        android:inputType="numberDecimal" />
+                </LinearLayout>
+
+
+                <TextView
+                    style="@style/CategoryStyle"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/money" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/money"
+                        style="@style/CategoryStyle"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:width="0dp"
+                        android:gravity="center"
+                        android:onClick="calculateMoney"
+                        android:textColor="#2B3D4D" />
+
+                    <TextView
+                        style="@style/EditorUnitsStyle"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/money_unit" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
